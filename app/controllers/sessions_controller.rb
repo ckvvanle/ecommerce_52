@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :category_all, only: :new
 
   def new; end
 
@@ -29,7 +28,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to login_path
+    redirect_to root_path
   end
 
   private

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(edit update show)
-  before_action :logged_in_user, only: %i(update)
-  before_action :category_all
+  before_action :logged_in_user, only: %i(update edit show)
 
   def new
     @user = User.new

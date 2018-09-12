@@ -8,7 +8,7 @@
         <div class="product-ratting"></div>
         <div class="product-comment"></div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5 col-md-offset-1">
         <div class="product-name">
           <h3><%= @product.name %></h3>
           <div class="category">
@@ -22,10 +22,7 @@
           <h3><%= number_to_currency @product.price %></h3>
         </div>
         <div class="product-add-to-cart">
-          <%= link_to "#", class: "btn btn-warning btn-lg", role: :button do %>
-            <%= image_tag "cart.png" %>
-            <span><%= t "button.add_to_cart" %></span>
-          <% end %>
+          <a class="addcart btn btn-warning btn-lg" data-id="<%= @product.id %>"><%= t "button.add_to_cart" %></a>
         </div>
       </div>
     </div>

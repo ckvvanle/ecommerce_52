@@ -18,9 +18,14 @@ en:
         view_details: "View Details"
         support_ticket: "Support Tickets!"
         area_chart: "Area Chart"
-      slide_bar:
+      slidebar:
         dashboard: "Dashboard"
         charts: "Charts"
+        manager_user: "Manager user"
+        manager_category: "Manager category"
+        manager_product: "Manager product"
+        manager_order: "Manager order"
+        manager_request: "Manager request"
     users:
       form:
         edit_user: "Edit User"

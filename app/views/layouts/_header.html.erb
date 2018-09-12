@@ -2,7 +2,7 @@
   <div class="col-sm-6">
     <div class="logo">
       <%= link_to image_tag("logo.png", alt: t("alt.logo"),
-        class: "img-responsive"), "#" %>
+        class: "img-responsive"), root_path %>
     </div>
   </div>
   <div class="col-sm-6">
@@ -57,7 +57,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to t("profile"), current_user, class: "glyphicon glyphicon-user" %></li>
                 <li>
-                  <%= link_to t("settings"), "#", class: "glyphicon glyphicon-cog" %>
+                  <%= link_to t("mycart"), orders_path, class: "glyphicon" %>
                 </li>
                 <li class="divider"></li>
                 <li>

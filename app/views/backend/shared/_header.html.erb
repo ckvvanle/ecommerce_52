@@ -10,7 +10,8 @@
       <span class="icon-bar"></span>
     </button>
     <ul class="nav navbar-nav navbar-left navbar-top-links">
-      <li><a href="#"><i class="fa fa-home fa-fw"></i><%= t ".website" %></a></li>
+      <li><%= link_to t(".website"), root_path, class: "fa fa-home fa-fw", target: :blank %></li>
+
     </ul>
     <ul class="nav navbar-right navbar-top-links">
       <li class="dropdown sig_to">

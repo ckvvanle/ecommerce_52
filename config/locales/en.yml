@@ -83,10 +83,13 @@ en:
     filter_by: "Filter by"
     category:  "Category:"
     all: "All category"
-    min: "Min price ($):"
-    max: "Max price ($):"
+    min: "Min price ($)"
+    max: "Max price ($)"
     name: "Product's name"
+    all_product: "All product for your result:"
   comments:
     create:
       new_comment: "success comment"
       not_comment: "not create comment"
+  application:
+    please_login: "Please login!"

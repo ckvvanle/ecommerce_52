@@ -19,8 +19,12 @@ class ApplicationController < ActionController::Base
 
   def logged_in_user
     return if logged_in?
-    flash[:danger] = t ".please_login"
+    flash[:danger] = t "application.please_login"
     redirect_to login_path
+  end
+
+  def admin_user?
+    redirect_to root_path unless current_user.admin?
   end
 
   def category_all
