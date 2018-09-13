@@ -9,4 +9,6 @@ class Suggest < ApplicationRecord
    length: {maximum: Settings.maximum.description}
 
   enum status: {pending: 0, accept: 1, cancel: 2}
+
+  scope :feed_user_id, ->(id){where user_id: id}
 end

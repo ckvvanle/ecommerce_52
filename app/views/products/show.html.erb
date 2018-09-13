@@ -29,12 +29,16 @@
     <!-- the comment box -->
     <div class="well">
       <h4>
-        <i class="fa fa-paper-plane-o"></i><%= t "leaver" %>
+        <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
       </h4>
-     <div class="form-group">
-        <%= render partial: "comments/form_comment",
-          locals:{url: comments_path, comment: @comment, product: @product} %>
-      </div>
+      <% if logged_in? %>
+        <div class="form-group">
+          <%= render partial: "comments/form_comment",
+            locals:{url: comments_path, comment: @comment, product: @product} %>
+        </div>
+      <% else %>
+        <div class="form-group"></div>
+      <% end %>
       <!-- the comments -->
       <div class="form-group">
         <%= render @comments %>

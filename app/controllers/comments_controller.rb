@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = t ".not_comment"
     end
-    redirect_to product_path(comment_params[:product_id])
+    redirect_to product_path(@comment.product_id)
   end
 
   private

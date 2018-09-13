@@ -24,6 +24,9 @@ en:
   detail_product: "Detail Product"
   view_cart: "View Cart"
   b_comments: "comments"
+  suggest_title: "Suggest"
+  edit_title: "Edit User"
+  total_price: "Total Price"
   users:
     new:
       sign_up: "Sign Up"
@@ -51,6 +54,10 @@ en:
     show:
       suggests_count: "Suggests( %{count} )"
       edit: "Edit"
+      full_name: "Full Name"
+      email: "Email"
+      address: "Address"
+      phone: "Phone"
   index:
     title: "All Users"
   delete: "Delete"
@@ -153,6 +160,7 @@ en:
       date: "Date"
       status: "Status"
       delete: "Delete"
+      my_order: "My Order"
     checkout:
       cart: "Cart"
       secure_payment: "Secure Payment"
@@ -171,6 +179,9 @@ en:
       email: "Email: "
       address: "Address: "
       status: "Status: "
+      your_order: "Your Order"
+      return_list: "Return List"
+      thank_you: "Thank You"
   carts:
     notice: "Not enough quantity"
     show:
@@ -187,6 +198,13 @@ en:
       brand_name: "Brand name"
       status: "Status :"
       in_stock: "In Stock"
+    viewcart:
+      checkout: "Checkout"
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      total: "Total"
+      continue_shopping: "Continue Shopping"
   comments:
     form_comment:
       text_comments: "Please enter a comment"

@@ -1,19 +1,27 @@
 <% provide :title, t("home") %>
 <div class="slide_hot_product">
-  <%= render "shared/slide_hot_product" %>
   <div class="container">
-    <div class="row">
+    <%= render "shared/slide_hot_product" %>
+  </div>
+  <div class="container">
+    <div class="title_home">
       <h2><%= t ".product_recent" %></h2>
+    </div>
+    <div class="row">
       <hr>
       <%= render partial: "product_recent", collection: @products_recent %>
     </div>
-    <div class="row">
+    <div class="title_home">
       <h2><%= t ".product_all" %></h2>
+    </div>
+    <div class="row">
       <hr>
       <%= render @products %>
     </div>
     <%= will_paginate @products %>
   </div>
 </div>
-<%= render "shared/user_info" %>
+<div class="container">
+  <h2><%= t "suggest_title" %></h2>
+  <%= render "shared/user_info" %>
 </div>

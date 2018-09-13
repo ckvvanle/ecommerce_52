@@ -4,7 +4,10 @@
       <div class="receipt-header">
         <div class="col-xs-6 col-sm-6 col-md-6">
           <div class="receipt-left">
-            <img class="img-responsive img_title_order" alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" >
+            <h4 class="text-danger"><%= current_user.name %></h4>
+            <p><b><%= t ".mobile" %></b><%= current_user.phone %></p>
+            <p><b><%= t ".email" %></b><%= current_user.email %></p>
+            <p><b><%= t ".address" %></b><%= current_user.address %></p>
           </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -21,14 +24,6 @@
       <div class="receipt-header receipt-header-mid">
         <div class="col-xs-8 col-sm-8 col-md-8 text-left">
           <div class="receipt-right">
-            <h4 class="text-danger"><%= current_user.name %></h4>
-            <p><b><%= t ".mobile" %></b><%= current_user.phone %></p>
-            <p><b><%= t ".email" %></b><%= current_user.email %></p>
-            <p><b><%= t ".address" %></b><%= current_user.address %></p>
-          </div>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4">
-          <div class="receipt-left">
             <h2 class="text-primary"><%= t ".your_order" %></h2>
           </div>
         </div>

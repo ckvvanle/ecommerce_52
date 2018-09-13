@@ -46,10 +46,10 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to t("order"), viewcart_carts_path, class: "glyphicon glyphicon-shopping-cart" %>
+          </li>
           <% if logged_in? %>
-            <li>
-              <%= link_to t("order"), viewcart_carts_path, class: "glyphicon glyphicon-shopping-cart" %>
-            </li>
             <li class="right_to ">
               <a href="#" class="dropdown-toggle " data-toggle="dropdown">
                 <b class="glyphicon glyphicon-user"></b><%= t "account" %> <b class="caret"></b>

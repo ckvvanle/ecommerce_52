@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(edit update show)
   before_action :logged_in_user, only: %i(update edit show)
+  before_action :category_all
 
   def new
     @user = User.new
   end
 
-  def show; end
+  def show
+    @suggests = Suggest.feed_user_id(current_user.id)
+  end
 
   def create
     @user = User.new user_params
