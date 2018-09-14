@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.by_category(params[:category]).by_name(params[:name])
                        .by_min_price(params[:min]).by_max_price(params[:max])
+                       .paginate page: params[:page],
+                         per_page: Settings.per_product
   end
 
   def show

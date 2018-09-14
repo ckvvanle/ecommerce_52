@@ -1,5 +1,13 @@
 <div class="row">
-  <h2><%= t "search.all_product" %></h2>
-  <hr>
-  <%= render @products %>
+  <% if @products.present? %>
+    <h2><%= t "search.all_product" %></h2>
+    <hr>
+    <%= render @products %>
+    <div class="custom-paginate">
+      <%= will_paginate @products %>
+    </div>
+
+  <% else %>
+    <h2><%= t "search.not_found" %></h2>
+  <% end %>
 </div>

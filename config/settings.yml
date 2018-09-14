@@ -8,6 +8,7 @@ maximum:
 per_user: 10
 per_category: 5
 per_order: 5
+per_product: 8
 counter_default: 1
 minimum:
   pass: 6

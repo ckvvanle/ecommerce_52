@@ -73,6 +73,7 @@ en:
     fail: "Processing fail!"
     not_found: "Not found"
     see_detail: "see_detail"
+    rollback_fail: "Rollback fail"
   slide:
     previous: "Previous"
     next: "Next"
@@ -87,6 +88,7 @@ en:
     max: "Max price ($)"
     name: "Product's name"
     all_product: "All product for your result:"
+    not_found: "Not found product for your search!"
   comments:
     create:
       new_comment: "success comment"
