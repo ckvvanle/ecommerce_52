@@ -208,6 +208,7 @@ en:
       price: "Price"
       total: "Total"
       continue_shopping: "Continue Shopping"
+      no_item: "No item in your cart!"
   comments:
     form_comment:
       text_comments: "Please enter a comment"

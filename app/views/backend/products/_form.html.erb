@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <%= label_tag t ".category" %>
-          <%= f.select :category_id, load_data_categories(@categories), {}, { class: "form-control" } %>
+          <%= f.select :category_id, option_select(Category.select_category), class: "form-control" %>
         </div>
         <%= f.submit t(".submit"), class: "btn btn-default" %>
         <%= f.button t(".reset"), type: :reset, class: "btn btn-default" %>
