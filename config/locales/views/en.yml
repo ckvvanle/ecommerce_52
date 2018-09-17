@@ -11,6 +11,7 @@ en:
   about: "about"
   user_home: "Users"
   profile: " Profile"
+  admin: "Aminpage"
   mycart: " Mycart"
   log_out: " Logout"
   login: " Login"
@@ -28,29 +29,48 @@ en:
   edit_title: "Edit User"
   total_price: "Total Price"
   users:
-    new:
-      sign_up: "Sign Up"
-      text_white: "This will be a signup page for new users."
-      username: "Name"
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Confirmation"
-      create: "Create my account"
-      address: "Address"
-      phone: "Phone"
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        text_white: "This will be a signup page for new users."
+        username: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation"
+        create: "Create my account"
+        address: "Address"
+        phone: "Phone"
+
+      edit:
+        edit_title: "Edit User"
+        username: "Name"
+        email: "Email"
+        password: "Password"
+        leave_blank: "(leave blank if you don't want to change it)"
+        character_min: "characters minimum"
+        current_password: "(we need your current password to confirm your changes)"
+        password_confirmation: "Confirmation"
+        password_current: "Current password"
+        address: "Address"
+        phone: "Phone"
+        save: "Update"
+        back: "Back"
+    sessions:
+      new:
+        please_sign_in: "Please Sign In"
+      form:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember Me"
+        login: "Login"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
     create:
       title_text: "Account activated!"
       profile_updated: "Profile updated"
       message_update: "updated successfully !"
-    edit:
-      edit_title: "Edit User"
-      username: "Username"
-      email: "Email"
-      password: "Password"
-      confirmation: "password_confirmation"
-      address: "Address"
-      phone: "phone"
-      save: save
     show:
       suggests_count: "Suggests( %{count} )"
       edit: "Edit"
@@ -94,12 +114,6 @@ en:
       slide_bar:
         dashboard: "Dashboard"
         charts: "Charts"
-    sessions:
-      new:
-        please_sign_in: "Please Sign In"
-      form:
-        remember_me: "Remember Me"
-        login: "Login"
   save: "save"
   layouts:
     suggest:

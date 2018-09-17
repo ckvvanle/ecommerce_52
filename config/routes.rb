@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#home"
+
+  devise_for :users
+
   namespace :backend do
     get "/", to: "static_page#index"
 
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :suggests
   resources :comments, only: :create
-  resources :users
+  resources :users, only: :show
   resources :products
   resources :categories
   resources :orders do
