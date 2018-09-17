@@ -15,6 +15,7 @@ class Backend::OrdersController < Backend::BaseController
   def update
     if params[:status].to_i == Settings.order.accepted
       status = :accepted
+      process_update_number_of_order
     else
       status = :rejected
       process_rollback_qty
@@ -58,6 +59,18 @@ class Backend::OrdersController < Backend::BaseController
     order_items.each do |order_item|
       product_qty = order_item.product_quantity + order_item.quantity
       order_item.product.update_attributes quantity: product_qty
+    end
+  end
+
+  def process_update_number_of_order
+    return if update_number_of_order @order_items
+    flash.now[:danger] = t "orders.update_fail"
+    render :show
+  end
+
+  def update_number_of_order order_items
+    order_items.each do |order_item|
+      order_item.product.update_attributes number_of_order: order_item.quantity
     end
   end
 end

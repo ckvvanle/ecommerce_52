@@ -182,6 +182,9 @@ en:
       your_order: "Your Order"
       return_list: "Return List"
       thank_you: "Thank You"
+    destroy:
+      orders_dell: "delete orders success"
+      not_orders_dell: "not delete orders"
   carts:
     notice: "Not enough quantity"
     show:
@@ -205,6 +208,7 @@ en:
       price: "Price"
       total: "Total"
       continue_shopping: "Continue Shopping"
+      no_item: "No item in your cart!"
   comments:
     form_comment:
       text_comments: "Please enter a comment"

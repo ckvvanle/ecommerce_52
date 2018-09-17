@@ -74,6 +74,7 @@ en:
     not_found: "Not found"
     see_detail: "see_detail"
     rollback_fail: "Rollback fail"
+    update_fail: "Update number of order fail!"
   slide:
     previous: "Previous"
     next: "Next"
@@ -95,3 +96,5 @@ en:
       not_comment: "not create comment"
   application:
     please_login: "Please login!"
+  product:
+    img_less_than: "should be less than 5MB"
