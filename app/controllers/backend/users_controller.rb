@@ -5,13 +5,8 @@ class Backend::UsersController < Backend::BaseController
   def edit; end
 
   def index
-    @users = User.newest
-    @users = if params[:search].present?
-               @users.search(params[:search])
-             else
-               @users
-             end
-             .paginate page: params[:page],
+    @q = User.ransack params[:q]
+    @users = @q.result.newest.paginate page: params[:page],
                 per_page: Settings.admin_user_perpage
   end
 

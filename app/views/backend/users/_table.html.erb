@@ -5,9 +5,11 @@
 </div>
 <div class="panel-heading">
   <div class="col-md-offset-8">
-    <%= form_tag(backend_users_path, method: :get) do %>
-       <%= text_field_tag t(".search"), params[:search], placeholder: t(".enter_name_email") %>
-      <%= submit_tag "Search" %>
+    <%= search_form_for [:backend, @q] do |f| %>
+      <p>
+        <%= f.search_field :name_or_email_cont, placeholder: t(".enter_name_email") %>
+        <%= f.submit %>
+      </p>
     <% end %>
   </div>
 </div>

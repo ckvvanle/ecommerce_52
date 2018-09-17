@@ -11,4 +11,8 @@ module ApplicationHelper
   def category_select
     Category.select_category.map{|category| [category.name, category.id]}
   end
+
+  def status_select
+    Order.statuses.map{|k, v| [k, v]}
+  end
 end

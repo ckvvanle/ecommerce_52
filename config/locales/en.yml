@@ -75,6 +75,8 @@ en:
     see_detail: "see_detail"
     rollback_fail: "Rollback fail"
     update_fail: "Update number of order fail!"
+    by_status: "By status"
+    user_name: "User's name"
   slide:
     previous: "Previous"
     next: "Next"

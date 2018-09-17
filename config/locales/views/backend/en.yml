@@ -124,7 +124,7 @@ en:
         picture: "Picture"
         number_of_order: "Number of order"
         category: "Category"
-        enter_name_category:  "Enter Name Or Category"
+        product_name:  "Enter product's name"
         import_file_CSV: "Import File CSV"
         create_product: "Create Product"
       product:
