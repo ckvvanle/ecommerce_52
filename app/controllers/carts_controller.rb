@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  before_action :category_all, only: :viewcart
   before_action :load_product, :check_vaild_quanity?,
     :update_quantity, only: :update_quantity_in_cart
   def show; end

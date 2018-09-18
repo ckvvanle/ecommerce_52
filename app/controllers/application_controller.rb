@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
-
   protect_from_forgery with: :exception
 
   before_action :set_locale, :category_all
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :not_found?
 
@@ -17,17 +16,21 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def logged_in_user
-    return if logged_in?
-    flash[:danger] = t "application.please_login"
-    redirect_to login_path
-  end
-
   def admin_user?
     redirect_to root_path unless current_user.admin?
   end
 
   def category_all
     @categories = Category.all
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit :sign_up, keys: User::PARAMS
+    devise_parameter_sanitizer.permit :account_update, keys: User::PARAMS
+  end
+
+  def after_sign_in_path_for resource
+    return backend_path if resource.admin?
+    root_path
   end
 end

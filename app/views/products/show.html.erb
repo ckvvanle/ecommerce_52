@@ -31,7 +31,7 @@
       <h4>
         <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
       </h4>
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <div class="form-group">
           <%= render partial: "comments/form_comment",
             locals:{url: comments_path, comment: @comment, product: @product} %>
