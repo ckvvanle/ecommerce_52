@@ -33,4 +33,10 @@ class ApplicationController < ActionController::Base
     return backend_path if resource.admin?
     root_path
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html{redirect_to main_app.root_path, alert: exception.message}
+    end
+  end
 end

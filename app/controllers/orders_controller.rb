@@ -1,23 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_item, only: :destroy
+  load_and_authorize_resource
 
   def index
-    @orders = Order.feed_user_id(current_user.id)
-                   .paginate page: params[:page], per_page: Settings.per_page
-  end
-
-  def new
-    @order = Order.new
+    @orders = @orders.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def show
-    if @order = Order.find_by(id: params[:id])
-      @order_items = @order.order_items.includes :product
-    else
-      flash[:success] = t ".not_show"
-      redirect_to root_path
-    end
+    @order_items = @order.order_items.includes :product
   end
 
   def checkout
@@ -40,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    if @orders.destroy
+    if @order.destroy
       flash[:success] = t ".orders_dell"
     else
       flash[:danger] = t ".not_orders_dell"
@@ -58,10 +48,5 @@ class OrdersController < ApplicationController
     session[:cart] = []
     flash[:success] = t ".checkout_sucsess"
     redirect_to orders_path
-  end
-
-  def correct_item
-    @orders = Order.find_by id: params[:id]
-    redirect_to root_path unless @orders.present?
   end
 end

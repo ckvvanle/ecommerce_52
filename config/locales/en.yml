@@ -98,3 +98,6 @@ en:
     please_login: "Please login!"
   product:
     img_less_than: "should be less than 5MB"
+  users:
+    show:
+      not_allow: "Not allowed"

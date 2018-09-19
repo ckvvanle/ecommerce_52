@@ -3,6 +3,8 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "rails", "~> 5.2.1"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "bcrypt", "3.1.12"
 gem "bootstrap-sass", "3.3.7"
@@ -21,7 +23,6 @@ gem "jquery-turbolinks"
 gem "less-rails-bootstrap"
 gem "mini_magick", "~> 4.8"
 gem "puma", "~> 3.7"
-gem "rails", "~> 5.2.1"
 gem "rails-assets-sweetalert2", source: "https://rails-assets.org"
 gem "rails-sweetalert2-confirm"
 gem "roo"
@@ -37,6 +38,7 @@ gem "will_paginate", "3.1.6"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
 
+gem "cancancan", "~> 2.0"
 gem "devise"
 
 group :development, :test do

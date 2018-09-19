@@ -28,16 +28,14 @@
     </div>
     <!-- the comment box -->
     <div class="well">
-      <h4>
-        <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
-      </h4>
-      <% if user_signed_in? %>
+      <% if can? :create, @comment %>
+        <h4>
+          <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
+        </h4>
         <div class="form-group">
           <%= render partial: "comments/form_comment",
             locals:{url: comments_path, comment: @comment, product: @product} %>
         </div>
-      <% else %>
-        <div class="form-group"></div>
       <% end %>
       <!-- the comments -->
       <div class="form-group">

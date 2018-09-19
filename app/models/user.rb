@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   PARAMS = [:name, :email, :password, :password_confirmation, :address, :phone]
+           .freeze
+
   devise :database_authenticatable, :registerable, :rememberable,
     :validatable
 
