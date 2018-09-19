@@ -20,7 +20,7 @@ class User < ApplicationRecord
   enum role: {member: 0, admin: 1}
 
   scope :newest, ->{order created_at: :DESC}
-  scope :search, ->(key) do
+  scope :search_name, ->(key) do
     where "name LIKE ? OR email LIKE ?", "%#{key}%", "%#{key}%"
   end
 end

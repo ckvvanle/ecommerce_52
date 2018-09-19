@@ -2,12 +2,9 @@ class Backend::OrdersController < Backend::BaseController
   before_action :load_order, :load_order_items, only: %i(show update)
 
   def index
-    @orders = if params[:search].present?
-                search params[:search]
-              else
-                Order
-              end.newest.includes(:user)
-              .paginate page: params[:page], per_page: Settings.per_order
+    @q = Order.ransack params[:q]
+    @orders = @q.result.newest.includes(:user)
+                .paginate page: params[:page], per_page: Settings.per_order
   end
 
   def show; end

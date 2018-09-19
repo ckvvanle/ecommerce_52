@@ -5,10 +5,11 @@
         <h2><%= t "orders.list_order" %></h2>
       </div>
       <div class="col-md-8 search-form-order text-right">
-        <%= form_tag backend_orders_path, method: :get do %>
+        <%= search_form_for [:backend, @q] do |f| %>
           <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag t("category.search") %>
+            <%= f.select :status_eq, status_select, include_blank: t("orders.by_status") %>
+            <%= f.search_field :user_name_cont, placeholder: t("orders.user_name") %>
+            <%= f.submit t("category.search") %>
           </p>
         <% end %>
       </div>

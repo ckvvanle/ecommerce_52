@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :set_locale, :category_all
+  before_action :set_locale, :category_all, :load_search_product
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :not_found?
@@ -32,6 +32,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for resource
     return backend_path if resource.admin?
     root_path
+  end
+
+  def load_search_product
+    @q = Product.ransack params[:q]
   end
 
   rescue_from CanCan::AccessDenied do |exception|

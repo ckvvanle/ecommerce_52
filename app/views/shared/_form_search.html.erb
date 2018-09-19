@@ -1,19 +1,20 @@
 <div class="">
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0">
-      <%= form_tag products_path, method: :get do  %>
+      <%#= form_tag products_path, method: :get do  %>
+      <%= search_form_for @q do |f| %>
         <div class="input-group search-form">
           <div class="form-group">
-            <%= text_field_tag :name, params[:name], class: "form-control  search-name-width", placeholder: t("search.name") %>
+            <%= f.search_field :name_cont, class: "form-control  search-name-width", placeholder: t("search.name") %>
           </div>
           <div class="form-group">
-            <%= number_field_tag :min, params[:min], placeholder: t("search.min"), class: "form-control search-min-width" %>
+            <%= f.search_field :price_gteq, placeholder: t("search.min"), class: "form-control search-min-width" %>
           </div>
           <div class="form-group">
-            <%= number_field_tag :max, params[:max], placeholder: t("search.max"), class: "form-control search-max-width" %>
+            <%= f.search_field :price_lteq, placeholder: t("search.max"), class: "form-control search-max-width" %>
           </div>
           <div class="form-group">
-            <%= select_tag :category, options_for_select(category_select), class: "select form-control search-category-width", include_blank: t("search.all") %>
+            <%= f.select :category_id_eq, options_for_select(category_select), {include_blank: t("search.all")}, class: "select form-control search-category-width" %>
           </div>
 
           <span class="input-group-btn">

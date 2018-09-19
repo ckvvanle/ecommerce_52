@@ -40,6 +40,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 gem "cancancan", "~> 2.0"
 gem "devise"
+gem "ransack"
+gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

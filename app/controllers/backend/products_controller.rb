@@ -3,14 +3,10 @@ class Backend::ProductsController < Backend::BaseController
   before_action :load_product, except: %i(index new create import)
 
   def index
-    @products = Product.includes(:category).newest.paginate page: params[:page],
-      per_page: Settings.admin_product_perpage
-    if params[:category_id].present?
-      (params[:search].present? ? search_key_cat : search_category)
-        .paginate page: params[:page], per_page: Settings.admin_product_perpage
-    elsif params[:search].present?
-      search_key
-    end
+    @q = Product.ransack params[:q]
+    @products = @q.result.includes(:category).newest
+                  .paginate page: params[:page],
+                   per_page: Settings.admin_product_perpage
   end
 
   def new
