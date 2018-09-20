@@ -192,6 +192,8 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     parallel (1.12.1)
+    paranoia (2.4.1)
+      activerecord (>= 4.0, < 5.3)
     parser (2.5.1.2)
       ast (~> 2.4.0)
     pg (0.19.0)
@@ -339,6 +341,7 @@ DEPENDENCIES
   less-rails-bootstrap
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.8)
+  paranoia (~> 2.2)
   pg (~> 0.19.0)
   puma (~> 3.7)
   rails (~> 5.2.1)

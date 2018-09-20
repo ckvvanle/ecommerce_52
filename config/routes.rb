@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :products do
       collection {post :import}
+      member {get :softdelete}
     end
     resources :users do
       member do

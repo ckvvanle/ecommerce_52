@@ -113,6 +113,10 @@ en:
       delete_fail: "Deleted Fail"
       import_succsess: "Data imported"
       import_danger: "Import failed"
+      restore_success: "Restore success"
+      restore_fail: "Restore fail"
+      soft_del_success: "Soft delete success"
+      soft_del_fail: "Soft delete fail"
       table:
         list_product: "List Product"
         search: "Search"
@@ -131,6 +135,8 @@ en:
         edit: "Edit"
         delete: "Delete"
         you_sure: "You sure ?"
+        restore: "Restore"
+        soft_delete: "Soft delete"
       form:
         id: "ID"
         name: "Name"

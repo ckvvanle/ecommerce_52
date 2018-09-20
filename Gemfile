@@ -40,6 +40,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 gem "cancancan", "~> 2.0"
 gem "devise"
+gem "paranoia", "~> 2.2"
 gem "ransack"
 gem "simple_form"
 

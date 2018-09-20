@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
+
+  acts_as_paranoid
   delegate :name, to: :category, prefix: true
 
   has_many :comments, dependent: :destroy

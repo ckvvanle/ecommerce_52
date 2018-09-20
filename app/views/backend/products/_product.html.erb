@@ -1,11 +1,19 @@
 <tr class="odd gradeX">
+  <td class="center"><%= index_in_page product_counter, params[:page], Settings.admin_product_perpage %></td>
   <td class="center"><%= product.name %></td>
   <td class="center"><%= number_to_currency (product.price) %></td>
-  <td class="center"><%= product.quantity %></td>
+  <td class="text-center"><%= product.quantity %></td>
   <td class="center"><%= product.description %></td>
   <td class="center"><%= image_tag product.picture.thumb.url || "thumb_default.jpg" %></td>
-  <td class="center"><%= product.number_of_order %></td>
+  <td class="text-center"><%= product.number_of_order %></td>
   <td class="center"><%= product.category.name %></td>
   <td class="center"><%= link_to t(".edit"), edit_backend_product_path(product) %></td>
   <td class="center"><%= link_to t(".delete"), backend_product_path(product), method: :delete, data: {confirm: t(".you_sure")} %></td>
+  <td class="center">
+    <% if product.deleted? %>
+      <%= link_to t(".restore"), softdelete_backend_product_path(product) %>
+    <% else %>
+      <%= link_to t(".soft_delete"), softdelete_backend_product_path(product) %>
+    <% end %>
+  </td>
 </tr>
