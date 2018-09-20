@@ -68,20 +68,7 @@
           </li>
         </ul>
       </li>
-      <li class="dropdown sig_to">
-        <% if user_signed_in? %>
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i class="fa fa-user fa-fw"></i> <%= t ".user" %> <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu dropdown-user">
-          <li><%= link_to t(".settings"), "#" %></li>
-          <li><%= link_to t(".user_profile"), "#" %></li>
-          <li class="divider"></li>
-            <%= link_to t(".logout"), logout_path, method: :delete %>
-          </li>
-        </ul>
+      <li class="">
+        <%= link_to t(".logout"), destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-in" %>
       </li>
-      <% else %>
-        <li><%= link_to t(".login"), login_path %></li>
-      <% end %>
     </ul>
