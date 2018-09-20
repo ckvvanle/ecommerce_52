@@ -1,6 +1,6 @@
 class Backend::CategoriesController < Backend::BaseController
-  before_action :load_categoy, only: %i(edit update destroy)
   before_action :load_selects, only: %i(edit new)
+  load_and_authorize_resource
 
   def index
     @q = Category.ransack params[:q]

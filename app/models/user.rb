@@ -17,7 +17,7 @@ class User < ApplicationRecord
     length: {maximum: Settings.maximum.address}
   validates :phone, presence: true, length: {maximum: Settings.maximum.phone}
 
-  enum role: {member: 0, admin: 1}
+  enum role: {member: 0, admin: 1, staff: 2}
 
   scope :newest, ->{order created_at: :DESC}
   scope :search_name, ->(key) do

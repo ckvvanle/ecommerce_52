@@ -77,9 +77,10 @@ end
                category_id: rand(10..23))
 end
 User.create!(name:  "phuoctuyen",
-             email: "haphuoctuyen1997@gmail.com",
-             password: "11111111",
-             password_confirmation: "11111111",
+             email: "tuyen@gmail.com",
+             password: "123123",
+             password_confirmation: "123123",
+             role: 2,
              address: "điện phước ,điện bàn , quảng nam",
              phone: "01219399936"
              )

@@ -20,8 +20,16 @@
           <th><%= t "orders.no" %></th>
           <th><%= t "orders.user_name" %></th>
           <th class="text-center"><%= t "orders.status" %></th>
-          <th class="text-center"><%= t "orders.date_order" %></th>
-          <th class="text-center"><%= t "orders.total_price" %></th>
+          <th class="text-center">
+            <%= sort_link(@q, :date_order) do %>
+              <%= t "orders.date_order" %>
+            <% end %>
+          </th>
+          <th class="text-center">
+            <%= sort_link(@q, :total_price) do %>
+              <%= t "orders.total_price" %>
+            <% end %>
+          </th>
           <th class="text-center"><%= t "orders.detail" %></th>
         </tr>
       </thead>

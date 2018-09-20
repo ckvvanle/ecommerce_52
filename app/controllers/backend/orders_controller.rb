@@ -1,5 +1,6 @@
 class Backend::OrdersController < Backend::BaseController
-  before_action :load_order, :load_order_items, only: %i(show update)
+  load_and_authorize_resource
+  before_action :load_order_items, only: %i(show update)
 
   def index
     @q = Order.ransack params[:q]

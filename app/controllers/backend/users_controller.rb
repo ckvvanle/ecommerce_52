@@ -1,6 +1,6 @@
 class Backend::UsersController < Backend::BaseController
-  before_action :load_user, except: %i(index new create)
   before_action :load_roles, except: %i(index show destroy)
+  load_and_authorize_resource
 
   def edit; end
 
@@ -11,7 +11,7 @@ class Backend::UsersController < Backend::BaseController
   end
 
   def update
-    if @user.update_attributes user_params
+    if @user.update_without_password user_params
       flash[:success] = t ".user_updated"
       redirect_to backend_users_path
     else

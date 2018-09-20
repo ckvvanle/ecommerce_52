@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
   def admin_user?
-    redirect_to root_path unless current_user.admin?
+    redirect_to root_path if current_user.member?
   end
 
   def category_all
@@ -30,8 +30,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for resource
-    return backend_path if resource.admin?
-    root_path
+    return root_path if resource.member?
+    backend_path
   end
 
   def load_search_product

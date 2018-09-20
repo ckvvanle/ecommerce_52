@@ -6,7 +6,7 @@
 <div class="panel-heading">
   <div class="col-md-offset-0 form_import">
     <%= form_tag(import_backend_products_path, multipart: true, method: :post) do %>
-      <%= file_field_tag :file, {class: "form-control"}%>
+      <%= file_field_tag :file %>
       <%= submit_tag t ".import_file_CSV" %>
     <% end %>
 

@@ -4,7 +4,7 @@ module Backend::UsersHelper
   end
 
   def load_table_user user
-    return unless current_user.admin?
+    return if current_user.member?
     "#{link_to t('.edit'), edit_backend_user_path(user)}
       #{link_to t('.delete'), backend_user_path(user),
         method: :delete, data: {confirm: t('.you_sure')}}"

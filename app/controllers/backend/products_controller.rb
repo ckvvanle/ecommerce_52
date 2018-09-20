@@ -1,6 +1,7 @@
 class Backend::ProductsController < Backend::BaseController
   before_action :load_categories, except: %i(destroy import)
   before_action :load_product, except: %i(index new create import)
+  authorize_resource
 
   def index
     @q = Product.with_deleted.ransack params[:q]
@@ -47,17 +48,9 @@ class Backend::ProductsController < Backend::BaseController
 
   def softdelete
     if @product.deleted?
-      if @product.restore recursive: true
-        flash[:success] = t ".restore_success"
-      else
-        flash[:danger] = t ".restore_fail"
-      end
+      restore
     else
-      if @product.destroy
-        flash[:success] = t ".soft_del_success"
-      else
-        flash[:danger] = t ".soft_del_fail"
-      end
+      solf_del
     end
     redirect_to backend_products_path
   end
@@ -104,5 +97,21 @@ class Backend::ProductsController < Backend::BaseController
   def search_key
     @products = @products.search_by_key(params[:search]).paginate page:
       params[:page], per_page: Settings.admin_product_perpage
+  end
+
+  def restore
+    if @product.restore recursive: true
+      flash[:success] = t ".restore_success"
+    else
+      flash[:danger] = t ".restore_fail"
+    end
+  end
+
+  def solf_del
+    if @product.destroy
+      flash[:success] = t ".soft_del_success"
+    else
+      flash[:danger] = t ".soft_del_fail"
+    end
   end
 end
