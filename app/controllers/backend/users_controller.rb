@@ -11,7 +11,7 @@ class Backend::UsersController < Backend::BaseController
   end
 
   def update
-    if @user.update_attributes user_params
+    if @user.update_without_password user_params
       flash[:success] = t ".user_updated"
       redirect_to backend_users_path
     else

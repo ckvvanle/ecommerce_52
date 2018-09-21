@@ -30,8 +30,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for resource
-    return backend_path if resource.admin?
-    root_path
+    if resource.admin?
+      stored_location_for(resource) || backend_path
+    else
+      stored_location_for(resource) || root_path
+    end
   end
 
   def load_search_product
