@@ -66,5 +66,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem "capistrano"
+gem "capistrano3-puma"
+gem "capistrano-rails"
+gem "capistrano-bundler"
+gem "capistrano-rvm"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
