@@ -48,3 +48,4 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 set :keep_releases, 5
 set :rvm_type, :user
 set :rvm_ruby_version, "ruby-2.5.1"
+append :rvm_map_bins, 'puma', 'pumactl'
