@@ -32,6 +32,7 @@ gem "therubyracer"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate", "3.1.6"
+gem "mysql2", ">= 0.4.4", "< 0.6.0"
 
 # gem "capistrano-rails", group: :development
 
@@ -46,7 +47,6 @@ gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  gem "sqlite3"
 end
 
 group :development do
